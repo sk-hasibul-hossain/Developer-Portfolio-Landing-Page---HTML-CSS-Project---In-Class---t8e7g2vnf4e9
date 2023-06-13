@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+/* Hero Section */
+.head-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.head-container img{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    opacity: 85%;
+}
+.inner-head-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 140px;
+    margin-top: 100px;
+}
+.head-container .inner-head-container p{
+    color: white;
+    font-size: 3rem;
+}
+.head-container .inner-head-container :nth-child(1) span{
+    font-size: 20px;
+}
+/* Black Box Section */
+.black-box{
+    border-top: 5px solid white;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.black-box p{
+    color: white;
+    font-size: 3rem;
+}
+.black-box p span{
+    font-size: 4rem;
+}
+/* Card Container */
+.Card-Container-Section-using-Grid{
+    position: relative;
+}
+.grid-item{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.card{
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 50px;
+    border-radius: 30px;
+    box-sizing: content-box;
+}
+.card img{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.grid-item .card h3{
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.grid-item .card p{
+    border-end-end-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 200px;
+    margin: 10px;
+}
+/* bottom section */
+.Bottom-Section{
+    display: flex;
+    position: relative;
+}
+.Bottom-Section .contactMe,
+.Bottom-Section .About-US{
+    position: relative;
+    margin: 50px 50px 0 50px;
+    width: 100%;
+    height: 200px;
+    color: white;
+    box-sizing: content-box;
+}
+.Bottom-Section .contactMe{
+    background-color: rgb(19, 83, 4);
+}
+.Bottom-Section .About-US{
+    background-color: rgb(86, 0, 3);
+}
+.Bottom-Section .contactMe p,
+.Bottom-Section .About-US p{
+    overflow: hidden;
+    margin: 10px;
+    white-space: wrap;
+}
+.Bottom-Section .contactMe h1,
+.Bottom-Section .About-US h1{
+    word-wrap: break-word;
+    text-align: center;
+    margin: 10px;
+    border-bottom: 1px solid white;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .head-container{
+        word-wrap: break-word;
+    }
+    .head-container img{
+        height: 50vh;
+    }
+    .head-container .inner-head-container p{
+        color: white;
+        font-size: 20px;
+    }
+    .head-container .inner-head-container :nth-child(1) span{
+        font-size: 13px;
+    }
+    /* Black Box Section */
+    .black-box p{
+        color: white;
+        font-size: 20px;
+    }
+    .black-box p span{
+        font-size: 30px;
+    }
+    /* Card Container */
+    .grid-item{
+        flex-direction: column;
+    }
+    .grid-item .card{
+        margin: 30px;
+    }
+    .grid-item .card img{
+        width: 768px;
+    }
+    .grid-item .card h3,
+    .grid-item .card p{
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+    /* bottom section */
+    .Bottom-Section{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        margin: 30px 30px 0 30px;
+        
+    }
+    .Bottom-Section .contactMe{
+        margin: 0 0 20px 0;
+    }
+    .Bottom-Section .About-US{
+        margin: 0 0 0 0;
+    }
+    .Bottom-Section .contactMe,
+    .Bottom-Section .About-US{
+        height: 250px;
+    }
+}
+@media (max-width: 300px){
+    .head-container .inner-head-container p{
+        text-align: center;
+    }
+    /* Card Container */
+    .grid-item .card{
+        margin: 20px 0 10px 0;
+    }
+    /* bottom section */
+    .Bottom-Section{
+        margin: 0px;
+    }
+    .Bottom-Section .contactMe,
+    .Bottom-Section .About-US{
+        height: 450px;
+    }
+}
