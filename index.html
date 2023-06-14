@@ -66,6 +66,7 @@
             display: flex;
             position: relative;
             width: 100%;
+            overflow: hidden;
         }
         .card{
             position: relative;
@@ -74,26 +75,49 @@
             border-radius: 30px;
             box-sizing: content-box;
             overflow: hidden;
+
+
+            height: 600px;
         }
-        .card img{
-            position: relative;
+        .flip-card-front img{
             width: 100%;
-            max-width: 100%;
-            height: 50%;
+            height: 100%;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
         }
-        .grid-item .card h3{
+        .grid-item .card .card-content h3{
             text-align: center;
             margin: 5px 0px 5px 0px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         }
-        .grid-item .card p{
+        .grid-item .card .card-content p{
             border-end-end-radius: 30px;
             border-bottom-left-radius: 30px;
-            height: 200px;
+            height: 250px;
             margin: 10px;
-            overflow: hidden;
+        }
+        .flip-card-inner{
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            height: 50%;
+            text-align: center;
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            background-color: #2980b9;
+            opacity: 40%;
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .flip-card-inner .flip-card-back h2{
+            margin-top: 150px;
         }
         /* bottom section */
         .Bottom-Section{
@@ -127,6 +151,17 @@
             text-align: center;
             margin: 10px;
             border-bottom: 1px solid white;
+        }
+
+        .particles-js{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5),) */
+        }
+        /* Animation section */
+        .flip-card-inner:hover {
+            transform: rotateY(180deg);
         }
         /* Media Queries */
         @media (max-width: 768px) {
@@ -213,6 +248,8 @@
                 <p>Hi,<span>&nbspI am SK Hasibul Hossain</span></p>
                 <p>FULL STACK DEVELOPER</p>
             </div>
+            <div class="particles-js" id="particles-js">
+            </div>
         </div>
     </section>
     <section>
@@ -223,27 +260,48 @@
     <section class="Card-Container-Section-using-Grid">
         <div class="grid-item">
             <div class="card">
-                <img src="https://c4.wallpaperflare.com/wallpaper/176/864/869/computer-laptop-coffee-programming-wallpaper-preview.jpg" alt=""/>
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://c4.wallpaperflare.com/wallpaper/176/864/869/computer-laptop-coffee-programming-wallpaper-preview.jpg" alt=""/>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Web Development</h2>
+                    </div>
+                </div>
                 <div class="card-content">
                     <h3>Web Development</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quibusdam ex quaerat quasi nostrum tempore.</p>
-                </div>
+                </div>   
             </div>
             <div class="card">
-                <img src="https://c0.wallpaperflare.com/preview/379/493/189/concept-development-device-flat.jpg" alt=""/>
-                <div class="card-content">
-                    <h3>App Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quibusdam ex quaerat quasi nostrum tempore.</p>
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://c0.wallpaperflare.com/preview/379/493/189/concept-development-device-flat.jpg" alt=""/>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Web Development</h2>
+                    </div>
                 </div>
+                <div class="card-content">
+                    <h3>Web Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quibusdam ex quaerat quasi nostrum tempore.</p>
+                </div>   
             </div>
             <div class="card">
-                <img src="https://c1.wallpaperflare.com/preview/340/1001/67/ux-prototyping-design-webdesign.jpg" alt=""/>
-                <div class="card-content">
-                    <h3>UI UX Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quibusdam ex quaerat quasi nostrum tempore.</p>
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://c1.wallpaperflare.com/preview/340/1001/67/ux-prototyping-design-webdesign.jpg" alt=""/>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Web Development</h2>
+                    </div>
                 </div>
-            </div> 
-        </div> 
+                <div class="card-content">
+                    <h3>Web Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quibusdam ex quaerat quasi nostrum tempore.</p>
+                </div>   
+            </div>
+        </div>
     </section>
     <section class="Bottom-Section">
         <div class="contactMe">
@@ -258,4 +316,6 @@
         </div>
     </section>
 </body>
+<script src="particles-js.js"></script>
+<script src="app.js"></script>
 </html>
